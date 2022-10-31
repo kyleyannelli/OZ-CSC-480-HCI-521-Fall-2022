@@ -263,7 +263,7 @@ public class BotResource {
         } catch (SQLException e) {
             return Response.serverError().entity(e.getErrorCode()).build();
         }
-       return Response.status(Response.Status.ACCEPTED).build();
+        return Response.status(Response.Status.ACCEPTED).build();
     }
 
     @Path("Dictionary")
@@ -275,7 +275,7 @@ public class BotResource {
             db = RestApplication.getRestDatabase(Long.parseLong(server_id), "MYSQL_URL", "MYSQL_BOT_USER", "MYSQL_BOT_USER_PASSWORD");
             result = db.read.meaningsByEmoji(reaction);
         } catch (SQLException e) {
-           return Response.serverError().entity(e.getErrorCode()).build();
+            return Response.serverError().entity(e.getErrorCode()).build();
         }
         return Response.status(Response.Status.ACCEPTED).entity(result).build();
     }

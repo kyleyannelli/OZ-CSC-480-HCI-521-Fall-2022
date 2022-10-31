@@ -16,9 +16,9 @@ import java.util.Set;
 @ApplicationPath("/api")
 public class RestApplication extends Application {
     private final Set<Object> singletons = new HashSet<>();
-/*
-The RestApplication class adds Resources to the project so that things are aware of the REST classes.
- */
+    /*
+    The RestApplication class adds Resources to the project so that things are aware of the REST classes.
+     */
     public RestApplication(){
         singletons.add(new VersionTen());
         singletons.add(new DiscordResource());

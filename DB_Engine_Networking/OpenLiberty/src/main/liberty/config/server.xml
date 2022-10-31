@@ -1,36 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<server description="new server">
+<server description="react frontend">
 
     <!-- Enable features -->
     <featureManager>
-        <feature>jakartaee-9.1</feature>
         <feature>microProfile-5.0</feature>
         <feature>socialLogin-1.0</feature>
         <feature>transportSecurity-1.0</feature>
-        <feature>restfulWSClient-3.0</feature>
         <feature>cdi-3.0</feature>
-        <feature>jsonb-2.0</feature>
         <feature>jwt-1.0</feature>
     </featureManager>
-
-    <basicRegistry id="basic" realm="customRealm">
-        <user name="${bot.liberty.user}" password="${bot.liberty.password}" />
-        <group name="bot">
-            <member name="${bot.liberty.user}" />
-        </group>
-        <group name="users">
-            <member name="${bot.liberty.user}" />
-        </group>
-    </basicRegistry>
-
-    <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
-
-    <!-- For the keystore, default keys are generated and stored in a keystore. To provide the keystore password, generate an 
-        encoded password using bin/securityUtility encode and add it below in the password attribute of the keyStore element. 
-        Then uncomment the keyStore element. -->
-    <!--
-    <keyStore password=""/> 
-    -->
 
     <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
     <httpEndpoint httpPort="9080"
@@ -59,15 +37,8 @@
     </oauth2Login>
     <!-- End Discord OAuth2 Config -->
 
-    <authFilter id="authFilter1">
-        <requestUrl
-                id="myUrlFilter"
-                urlPattern="api"
-                matchType="notContain" />
-    </authFilter>
-
     <!-- tag::webApplication[] -->
-    <webApplication location="OZ-480F22.war"
+    <webApplication location="LIBERTY-FRONTEND.war"
                     contextRoot="/">
         <!-- tag::applicationBnd[] -->
         <application-bnd>

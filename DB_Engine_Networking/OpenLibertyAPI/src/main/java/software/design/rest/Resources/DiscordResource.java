@@ -25,7 +25,7 @@ public class DiscordResource {
     public Response Nickname(@FormParam("Server_id") Long Server_id, @FormParam("Discord_id") Long Discord_id) throws Throwable {
         Database db = null;
         try {
-             db = RestApplication.getRestDatabase(Server_id, "MYSQL_URL", "MYSQL_REST_USER", "MYSQL_REST_USER_PASSWORD");
+            db = RestApplication.getRestDatabase(Server_id, "MYSQL_URL", "MYSQL_REST_USER", "MYSQL_REST_USER_PASSWORD");
 
         }catch (Exception e){
             return Response.serverError().entity(e.getMessage()).build();
@@ -76,7 +76,7 @@ public class DiscordResource {
         Database db = null;
         try {
             db = RestApplication.getRestDatabase(Server_id, "MYSQL_URL", "MYSQL_REST_USER", "MYSQL_REST_USER_PASSWORD");
-       }catch (Exception e){
+        }catch (Exception e){
             return Response.serverError().entity(e.getMessage()).build();
 
         }
